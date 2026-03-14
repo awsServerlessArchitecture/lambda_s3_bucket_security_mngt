@@ -120,7 +120,7 @@ def lambda_handler(event, context):
    Scan complete
    ```
 
-Return JSON:
+Sample Return JSON based on encryption type:
 ```json
 {
   "status": "Scan complete",
@@ -128,6 +128,7 @@ Return JSON:
   "unencrypted_buckets": ["legacybucket123"]
 }
 ```
+Our test return json
 ![alt text](screenshots/cloudwatchlogs.png)
 ---
 

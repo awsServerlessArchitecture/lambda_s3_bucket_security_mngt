@@ -15,7 +15,7 @@ Since AWS now **mandates encryption by default** (all new buckets are automatica
 - Create a few buckets.  
 - By default, they will be encrypted (SSE‑S3 or SSE‑KMS).  
 - If your account allows, disable encryption on one bucket for testing. Otherwise, all buckets will appear under “encrypted.”
-
+![alt text](screenshots/s3_buckets.png)
 ---
 
 ### 2. IAM Role for Lambda
@@ -23,6 +23,7 @@ Since AWS now **mandates encryption by default** (all new buckets are automatica
 - Attach the following policies:
   - `AmazonS3ReadOnlyAccess` (to list buckets and check encryption).
   - `CloudWatchLogsFullAccess` (to allow Lambda to write logs).
+![alt text](screenshots/iam_role.png)
 
 For production, restrict permissions to just:
 ```json
@@ -103,6 +104,7 @@ def lambda_handler(event, context):
 2. Create a test event (any JSON payload is fine, e.g., `{}`).
 3. Run the function.
 4. The function will scan all buckets and print results.
+![alt text](screenshots/lambda_test_result.png)
 
 ---
 
@@ -126,7 +128,7 @@ Return JSON:
   "unencrypted_buckets": ["legacybucket123"]
 }
 ```
-
+![alt text](screenshots/cloudwatchlogs.png)
 ---
 
 ## 🚀 Notes
